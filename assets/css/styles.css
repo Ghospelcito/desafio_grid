@@ -1,0 +1,122 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* es el contenedor que estructuratoda la página */
+.container {
+  display: grid;
+  grid-template-areas:
+    "navbar navbar"
+    "sidebar products"
+    "footer footer";
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 200px 1fr;
+  height: 100vh;
+  background-color: #ff8d03;
+}
+/* barra de navegación */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-area: navbar;
+  background-color: #000000;
+  color: #df800c;
+  padding: 12px;
+  font-size: 32px;
+}
+
+/* barra lateral */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  grid-area: sidebar;
+  background-color: #f7880073;
+  padding: 16px;
+}
+
+.sidebar h2 {
+  margin-bottom: 16px;
+}
+
+.sidebar ul {
+  list-style: none;
+  cursor: pointer;
+}
+
+.sidebar li {
+  margin-bottom: 12px;
+}
+
+/* productos y sus cards */
+.product-grid {
+  display: grid;
+  grid-area: products;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 16px;
+  padding: 16px;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #000000;
+  border: 1px solid #000000;
+  border-radius: 5%;
+  padding: 8px;
+  text-align: center;
+  max-height: 600px;
+  margin-top: 30px;
+}
+
+.product-card img {
+  max-width: 100%;
+  height: auto;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 16px;
+  border-radius: 5%;
+}
+
+.product-card h3 {
+  font-size: 24px;
+  color: #ddd;
+  margin-top: 14px;
+}
+
+.product-card .price {
+  font-size: 20px;
+  font-weight: bold;
+  color: #8a8a8a;
+  margin-top: 18px;
+  margin-bottom: 16px;
+}
+
+.product-card button {
+  background-color: #ff8d03;
+  color: rgb(0, 0, 0);
+  border: none;
+  padding: 12px 28px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.product-card button:hover {
+  background-color: #b6690c;
+}
+
+/* el footer */
+.footer {
+  grid-area: footer;
+  background-color: black;
+  color: #d1780cc5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px;
+  font-size: 20px;
+}
